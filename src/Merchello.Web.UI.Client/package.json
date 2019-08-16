@@ -1,0 +1,56 @@
+{
+  "author": "Across the Pond, LLC",
+  "name": "Merchello",
+  "homepage": "https://github.com/meritage/Merchello",
+  "version": "2.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:merchello/Merchello.git"
+  },
+  "bugs": {
+    "url": "http://issues.merchello.com/youtrack/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/merchello/Merchello/blob/master/License.md"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.4"
+  },
+  "dependencies": {
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-sass": "^2.1.0",
+    "jasmine-core": "^3.1.0",
+    "node-sass": "^4.8.3",
+    "npm": "^5.8.0",
+    "phantomjs-prebuilt": "^2.1.16",
+    "requirejs": "^2.3.5"
+  },
+  "devDependencies": {
+    "bower": "~1.8.4",
+    "grunt": "^1.0.2",
+    "grunt-contrib-clean": "~1.1.0",
+    "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-connect": "~1.0.2",
+    "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-uglify": "~3.3.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-html2js": "~0.5.1",
+    "grunt-karma": "~2.0",
+    "grunt-ngdocs": "~0.2.11",
+    "grunt-open": "~0.2.3",
+    "grunt-recess": "~1.0",
+    "karma": "~2.0",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-coffee-preprocessor": "1.0.1",
+    "karma-firefox-launcher": "1.1.0",
+    "karma-jasmine": "1.1.1",
+    "karma-phantomjs-launcher": "1.0.4",
+    "karma-requirejs": "1.1.0",
+    "karma-script-launcher": "1.0.0",
+    "phantomjs": "~2.1.7"
+  }
+}

@@ -1,0 +1,50 @@
+<div class="umb-panel merchello-side-panel" ng-controller="Merchello.Marketing.Dialogs.OfferRewardCouponDiscountPriceController" data-ng-show="loaded">
+    <div class="umb-overlay umb-overlay-right">
+        <form class="umb-overlay__form" name="priceAdjustForm" id="priceAdjustForm">
+
+            <div class="umb-overlay-header">
+                <h4 class="umb-overlay__title"><localize key="merchelloMarketing_discountPriceDialogTitle">REWARD: Discount the price</localize></h4>
+            </div>
+
+            <div class="umb-overlay-container form-horizontal merchello-panel-body">
+                <label for="discount"><localize key="merchelloMarketing_discountPriceDialogApplyDiscount">Apply discount in the amount</localize>
+                <small><localize key="merchelloMarketing_discountPriceDialogApplyDiscountDescription">Values should be entered as positive numbers.</localize></small>
+                </label>
+                <div class="form-group row-fluid input-prepend input-append">
+                    <span class="add-on" data-ng-show="adjustmentType === 'flat'">{{currencySymbol}}</span>
+                    <input data-ng-model="amount" class="col-xs-5 span5" data-ng-required="true" type="number"/>
+                    <span class="add-on" data-ng-show="adjustmentType === 'percent'">%</span>
+                </div>
+                <div class="form-group row-fluid adjustment-type">
+                    <label class="label-checkbox">
+                        <input type="radio" data-ng-model="adjustmentType" value="flat"/>
+                        <span><localize key="merchelloGeneral_amount">Amount</localize></span>
+                    </label>
+                    <label class="label-checkbox">
+                        <input type="radio" data-ng-model="adjustmentType" value="percent"/>
+                        <span><localize key="merchelloGeneral_percent">Percent</localize></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="umb-overlay-drawer">
+                <div class="umb-overlay-drawer__align-right">
+                    
+                    <div class="umb-button">
+                        <a href data-ng-click="close()" class="btn btn-link">
+                            <localize key="general_cancel"></localize>
+                        </a>
+                    </div>
+
+                    <div class="umb-button">
+                        <button class="btn btn-success" data-ng-click="save()">
+                            <localize key="buttons_save"></localize>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

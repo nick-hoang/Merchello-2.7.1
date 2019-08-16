@@ -1,0 +1,28 @@
+.merchello-panel-body {
+  .shipping-dimensions {
+    margin-bottom: 1.5em;
+  }
+}
+
+#addProductForm, #copyProductForm {
+    .error {
+        display: block;
+        color: $error;
+        font-weight: bold;
+    }
+}
+
+.manufacturer {
+
+  .suggest ul {
+    margin: .5em 0 0 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      margin-left: 1em;
+    }
+    :first-child {
+      margin-left: 0;
+    }
+  }
+}

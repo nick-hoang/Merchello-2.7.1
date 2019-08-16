@@ -1,0 +1,16 @@
+﻿// ----------------------------------------------------------------------
+// VARIABLES, IMPORTS, RESETS, MIXINS & EXTENDS
+// ----------------------------------------------------------------------
+$orange: #675e7a; //This was Umbraco's orange (#f57020) .. It's now Umbracos purple
+$green: #53a93f; //Umbraco's green button color
+$blue: #049cdb; //Umbraco's blue nav tab hover color
+
+$well-blue: #F2FCFC; // The blue coour of a postcard box on the new Umb dashboard
+$active: lighten($green, 50%);
+$selected: lighten($blue, 50%);
+$warning: lighten($orange, 40%);
+$error: #f02e28; // umbraco alert red
+
+//Mixins
+@mixin box-sizing { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; }
+@mixin transition($timing: ease, $property: all, $duration: 0.5s) { -webkit-transition: $property $duration $timing; -moz-transition: $property $duration $timing; -ms-transition: $property $duration $timing; -o-transition: $property $duration $timing; transition: $property $duration $timing; }

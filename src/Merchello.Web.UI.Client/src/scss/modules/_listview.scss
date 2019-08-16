@@ -1,0 +1,48 @@
+.merchello-list-view {
+    .umb-table-body {
+        .umb-table-cell {
+            line-height: 15px;
+            min-height: 37px;
+            align-items: center;
+
+            .merchello-icon {
+                .icon {
+                    align-items: initial;
+                }
+            }
+        }
+    }
+
+    .umb-table-cell {
+
+        &:first-of-type:not(.not-fixed) {
+            padding: 6px 2px;
+            flex: 0 0 34px
+        }
+
+        > * {
+            overflow: hidden;
+            white-space: normal;
+            text-overflow: ellipsis;
+            word-wrap: normal;
+        }
+
+        > div.unflexed {
+            width: 100%;
+            flex: none;
+
+            small {
+                display: block;
+                color: #817f85;
+            }
+        }
+    }
+
+    .umb-table__name__large{
+        max-width:35%;
+    } 
+    
+    .umb-table-row {
+        cursor: default;
+    }
+}

@@ -1,0 +1,10 @@
+// The Merchello Language drop down
+.merch-language-select {
+    position: absolute;
+    top: 2px;
+    right: 20px;
+
+    .dropdown-menu {
+        width: inherit;
+    }
+}
