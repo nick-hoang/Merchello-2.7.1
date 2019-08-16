@@ -21,7 +21,7 @@
     /// Extension methods to map examine (Lucene) documents to respective "Display" object classes
     /// </summary>
     [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1202:ElementsMustBeOrderedByAccess", Justification = "Reviewed. Suppression is OK here.")]
-    internal static class ExamineDisplayExtensions
+    public static class ExamineDisplayExtensions
     {
         /// <summary>
         /// The to product display.
@@ -38,7 +38,7 @@
         /// <returns>
         /// The <see cref="ProductDisplay"/>.
         /// </returns>
-        internal static ProductDisplay ToProductDisplay(this SearchResult result, Func<Guid, IEnumerable<ProductVariantDisplay>> getProductVariants, DetachedValuesConversionType conversionType = DetachedValuesConversionType.Db)
+        public static ProductDisplay ToProductDisplay(this SearchResult result, Func<Guid, IEnumerable<ProductVariantDisplay>> getProductVariants, DetachedValuesConversionType conversionType = DetachedValuesConversionType.Db)
         {
             // this should be the master variant
             var productDisplay = new ProductDisplay(result.ToProductVariantDisplay());
@@ -58,7 +58,7 @@
         /// <returns>
         /// The <see cref="ProductVariantDisplay"/>.
         /// </returns>
-        internal static ProductVariantDisplay ToProductVariantDisplay(this SearchResult result)
+        public static ProductVariantDisplay ToProductVariantDisplay(this SearchResult result)
         {
             var pvd = new ProductVariantDisplay()
             {
@@ -106,7 +106,7 @@
         /// <returns>
         /// The <see cref="InvoiceDisplay"/>.
         /// </returns>
-        internal static InvoiceDisplay ToInvoiceDisplay(this SearchResult result, Func<Guid, IEnumerable<OrderDisplay>> getOrders)
+        public static InvoiceDisplay ToInvoiceDisplay(this SearchResult result, Func<Guid, IEnumerable<OrderDisplay>> getOrders)
         {
             var invoice = new InvoiceDisplay()
                 {
@@ -153,7 +153,7 @@
         /// <returns>
         /// The <see cref="OrderDisplay"/>.
         /// </returns>
-        internal static OrderDisplay ToOrderDisplay(this SearchResult result)
+        public static OrderDisplay ToOrderDisplay(this SearchResult result)
         {
             return new OrderDisplay()
                 {
@@ -182,7 +182,7 @@
         /// <returns>
         /// The <see cref="CustomerDisplay"/>.
         /// </returns>
-        internal static CustomerDisplay ToCustomerDisplay(this SearchResult result, Func<Guid, IEnumerable<InvoiceDisplay>> getInvoices)
+        public static CustomerDisplay ToCustomerDisplay(this SearchResult result, Func<Guid, IEnumerable<InvoiceDisplay>> getInvoices)
         {
             var customer = new CustomerDisplay()
             {

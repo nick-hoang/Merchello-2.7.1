@@ -22,7 +22,7 @@
         /// <param name="masterVariant">
         /// The master variant.
         /// </param>
-        internal ProductDisplay(ProductVariantDisplay masterVariant)
+        public ProductDisplay(ProductVariantDisplay masterVariant)
         {
             Key = masterVariant.ProductKey;
             ProductVariantKey = masterVariant.Key;

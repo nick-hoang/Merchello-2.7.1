@@ -688,7 +688,7 @@
         /// <returns>
         /// The <see cref="string"/>.
         /// </returns>
-        internal static string Slug(this ProductDisplayBase display, string cultureName)
+        public static string Slug(this ProductDisplayBase display, string cultureName)
         {
             var defaultSlug = display.GetDefaultSlug();
             if (!display.DetachedContents.Any()) return defaultSlug;
@@ -710,7 +710,7 @@
         /// <returns>
         /// The <see cref="int"/>.
         /// </returns>
-        internal static int TemplateId(this ProductDisplayBase display, string cultureName)
+        public static int TemplateId(this ProductDisplayBase display, string cultureName)
         {
             if (!display.DetachedContents.Any()) return 0;
 
@@ -788,14 +788,14 @@
 
         #region IProductVariant
 
-        internal static ProductVariantDisplay ToProductVariantDisplay(this IProductVariant productVariant, DetachedValuesConversionType conversionType = DetachedValuesConversionType.Db)
+        public static ProductVariantDisplay ToProductVariantDisplay(this IProductVariant productVariant, DetachedValuesConversionType conversionType = DetachedValuesConversionType.Db)
         {            
             var display = AutoMapper.Mapper.Map<ProductVariantDisplay>(productVariant);
             display.EnsureValueConversion(conversionType);
             return display;
         }
 
-        internal static IProductVariant ToProductVariant(this ProductVariantDisplay productVariantDisplay, IProductVariant destination)
+        public static IProductVariant ToProductVariant(this ProductVariantDisplay productVariantDisplay, IProductVariant destination)
         {
             if (productVariantDisplay.Key != Guid.Empty)
             {
