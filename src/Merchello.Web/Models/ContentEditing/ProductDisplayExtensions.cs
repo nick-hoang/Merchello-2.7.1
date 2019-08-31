@@ -695,7 +695,7 @@
 
             var dc = display.DetachedContentForCulture(cultureName);
 
-            return dc.Slug.IsNullOrWhiteSpace() ? defaultSlug : dc.Slug;
+            return (dc == null || string.IsNullOrWhiteSpace(dc.Slug)) ? defaultSlug : dc.Slug;
         }
 
         /// <summary>
