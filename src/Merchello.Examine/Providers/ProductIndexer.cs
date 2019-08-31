@@ -94,13 +94,13 @@
         /// </summary>
         internal static readonly List<StaticField> IndexFieldPolicies = new List<StaticField>()
             {
-                new StaticField("productKey", FieldIndexTypes.ANALYZED, false, string.Empty),
-                new StaticField("productVariantKey", FieldIndexTypes.ANALYZED, false, string.Empty),
-                new StaticField("name", FieldIndexTypes.ANALYZED, true, string.Empty),
-                new StaticField("sku", FieldIndexTypes.ANALYZED, true, string.Empty),
-                new StaticField("price", FieldIndexTypes.ANALYZED, true, string.Empty),
-                new StaticField("onSale", FieldIndexTypes.ANALYZED, true, string.Empty),
-                new StaticField("manufacturer", FieldIndexTypes.ANALYZED, false, string.Empty),
+                new StaticField("productKey", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
+                new StaticField("productVariantKey", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
+                new StaticField("name", FieldIndexTypes.NOT_ANALYZED, true, string.Empty),
+                new StaticField("sku", FieldIndexTypes.NOT_ANALYZED, true, string.Empty),
+                new StaticField("price", FieldIndexTypes.NOT_ANALYZED, true, "NUMBER"),
+                new StaticField("onSale", FieldIndexTypes.NOT_ANALYZED, true, string.Empty),
+                new StaticField("manufacturer", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("modelNumber", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("salePrice", FieldIndexTypes.NOT_ANALYZED, true, string.Empty),
                 new StaticField("costOfGoods", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
@@ -109,15 +109,15 @@
                 new StaticField("height", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("width", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("barcode", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),                
-                new StaticField("available", FieldIndexTypes.ANALYZED, false, string.Empty),
+                new StaticField("available", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("trackInventory", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("outOfStockPurchase", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("taxable", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("shippable", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("download", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
-                new StaticField("downloadMediaId", FieldIndexTypes.ANALYZED, false, "NUMBER"),
-                new StaticField("downloadMediaPropertyIds", FieldIndexTypes.ANALYZED, false, string.Empty),
-                new StaticField("master", FieldIndexTypes.ANALYZED, false, string.Empty),
+                new StaticField("downloadMediaId", FieldIndexTypes.NOT_ANALYZED, false, "NUMBER"),
+                new StaticField("downloadMediaPropertyIds", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
+                new StaticField("master", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("totalInventoryCount", FieldIndexTypes.NOT_ANALYZED, false, "NUMBER"),
                 new StaticField("attributes", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("catalogInventories", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
@@ -128,7 +128,7 @@
                 new StaticField("slugs", FieldIndexTypes.NOT_ANALYZED, false, string.Empty),
                 new StaticField("createDate", FieldIndexTypes.NOT_ANALYZED, true, "DATETIME"),
                 new StaticField("updateDate", FieldIndexTypes.NOT_ANALYZED, true, "DATETIME"),
-                new StaticField("allDocs", FieldIndexTypes.ANALYZED, false, string.Empty)
+                new StaticField("allDocs", FieldIndexTypes.NOT_ANALYZED, false, string.Empty)
             };
 
         /// <summary>
