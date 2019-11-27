@@ -293,12 +293,12 @@
             var sql = BuildAdvancedProductSearchSql(term, includeFields);
             if (includeFields.Contains("manufacturer") && !manufacturer.IsNullOrWhiteSpace())
             {
-                sql.Where<ProductVariantDto>(x => x.Manufacturer == manufacturer, SqlSyntax);
+                sql.Where<ProductVariantAdvanceSearchDto>(x => x.Manufacturer == manufacturer, SqlSyntax);
             }
 
             if (!collectionKey.Equals(Guid.Empty))
             {
-                sql.Append("AND [merchProductVariant].[productKey] IN (")
+                sql.Append("AND [merchProductVariantAdvanceSearchView].[productKey] IN (")
                 .Append("SELECT DISTINCT([productKey])")
                 .Append("FROM [merchProduct2EntityCollection]")
                 .Append(
@@ -309,7 +309,7 @@
 
             if (!includeUnavailable)
             {
-                sql.Append("AND [merchProductVariant].[available] = 1");
+                sql.Append("AND [merchProductVariantAdvanceSearchView].[available] = 1");
             }
 
             if (!string.IsNullOrEmpty(orderExpression))
@@ -319,7 +319,7 @@
                     : string.Format("ORDER BY {0} DESC", orderExpression));
             }
 
-            var results = Database.Page<ProductVariantDto>(page, itemsPerPage, sql);
+            var results = Database.Page<ProductVariantAdvanceSearchDto>(page, itemsPerPage, sql);
 
             // We have to check if any results are returned before passing to get all or
             // we WILL actually query every product.
@@ -349,7 +349,7 @@
             var validFields = ValidSearchFields.Where(includeFields.Contains).ToArray();
 
             var sql = new Sql();
-            sql.Select("*").From<ProductVariantDto>(SqlSyntax);
+            sql.Select("*").From<ProductVariantAdvanceSearchDto>(SqlSyntax);
 
             if (terms.Any())
             {
@@ -359,7 +359,14 @@
                 foreach (var field in validFields)
                 {
                     if (!fieldSql.IsNullOrWhiteSpace()) fieldSql += " OR ";
-                    fieldSql += string.Format("{0} LIKE @prepped", field);
+                    if (field == "sku")
+                    {
+                        fieldSql += string.Format("{0} LIKE @prepped", "variantSkus");
+                    }
+                    else
+                    {
+                        fieldSql += string.Format("{0} LIKE @prepped", field);
+                    }
                 }
 
                 sql.Where(fieldSql, new { @prepped = preparedTerms });
